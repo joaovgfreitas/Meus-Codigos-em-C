@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "deque.h"
+
+int main() {
+	Lista exemplo;
+	int valor;
+	criar(&exemplo);
+	printf("Informe um valor a ser inserido na lista ou -1 para encerrar: ");
+	scanf("%d", &valor);
+	while(valor != -1){
+		inserir(&exemplo, valor);
+		printf("Informe um valor a ser inserido na lista ou -1 para encerrar: ");
+		scanf("%d", &valor);
+	}
+	mostrar(exemplo);
+	printf("Informe um valor a ser inserido no inicio da lista: ");
+	scanf("%d", &valor);
+	inserirIni(&exemplo, valor);
+	mostrar(exemplo);
+	printf("Informe um valor a ser inserido no Fim da lista: ");
+	scanf("%d", &valor);
+	inserirFim(&exemplo, valor);
+	mostrar(exemplo);
+	printf("Informe o valor a ser removido: ");
+	scanf("%d", &valor);
+	remover(&exemplo, valor);
+	mostrar(exemplo);
+	printf("Removendo valor do inicio: \n");
+	removerIni(&exemplo);
+	mostrar(exemplo);
+	printf("Removendo valor do Fim: \n");
+	removerFim(&exemplo);
+	mostrar(exemplo);
+	return 0;
+}
